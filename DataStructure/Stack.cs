@@ -10,7 +10,7 @@ namespace DataStructure
         int[] stack;
         int sp;
         int max;
-        
+
         public Stack(int size)
         {
             max = size;
@@ -21,7 +21,15 @@ namespace DataStructure
         //method for pushing
         public void Push(int item)
         {
-
+            if (sp < max)
+            {
+                stack[sp] = item; //[sp++] [++sp]
+                sp++;
+            }
+            else
+            {
+                throw new Exception("Stack Full!");
+            }
         }
 
         //method for popping
@@ -30,7 +38,7 @@ namespace DataStructure
             if (sp > 0)
             {
                 sp--;
-                return stack[sp];
+                return stack[sp]; //[sp--] [--sp]
             }
             else
             { 
