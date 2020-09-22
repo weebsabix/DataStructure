@@ -6,7 +6,14 @@ namespace DataStructure
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Data Structure!");
+            Stack a = new Stack(10);
+
+            try
+            {
+                a.Pop();
+            }
+            catch
+            { }
         }
     }
 }
